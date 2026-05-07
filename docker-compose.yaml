@@ -32,36 +32,6 @@ services:
         aliases:
           - postgresql
 
-  # New MCP Server Service
-  mcp-postgres:
-    image: crystaldba/postgres-mcp:latest
-    container_name: mcp-postgres
-    restart: unless-stopped
-  
-    depends_on:
-      postgresql:
-        condition: service_healthy
-  
-    environment:
-      DATABASE_URI: postgresql://${SERVICE_USER_POSTGRES}:${SERVICE_PASSWORD_POSTGRES}@postgresql:5432/${POSTGRES_DB:-n8n}
-  
-    command: >
-      --transport=sse
-      --access-mode=restricted
-      --sse-host=0.0.0.0
-      --sse-port=8000
-  
-    expose:
-      - "8000"
-    deploy:
-      resources:
-        limits:
-          memory: 1GB
-          cpus: '0.5'
-  
-    networks:
-      - n8n-shared-net
-
   n8n:
     image: docker.n8n.io/n8nio/n8n:2.17.3
     container_name: n8n

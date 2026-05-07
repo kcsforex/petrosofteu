@@ -11,7 +11,7 @@ app = dash.Dash(__name__, use_pages=True, suppress_callback_exceptions=True, # c
     external_stylesheets=[dbc.themes.DARKLY, "https://use.fontawesome.com/releases/v5.15.4/css/all.css"])
 
 # ----- 2. NOW IMPORT YOUR PAGES -----
-from pages import home, bybit_ccharts, bybit_lcharts,  crm, kraken_charts, databricks, mcp, lufthansa1, lufthansa2
+from pages import home, bybit_lcharts, crm, kraken_charts, databricks, mcp, lufthansa1, lufthansa2
 
 # ----- 3. FASTAPI WRAPPER -----
 server = FastAPI(title="Dash Main App")

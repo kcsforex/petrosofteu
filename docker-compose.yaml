@@ -80,7 +80,7 @@ services:
   python-app:
     build:
       context: .
-      dockerfile: Dockerfile.dash
+      dockerfile: Dockerfile
     container_name: python-dash-app
     restart: always
     depends_on:

@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 from apis.lufthansa_api import sql_engine
 import pages.lufthansa_ml as lh_ml   
 
-dash.register_page(__name__, icon="fa-plane", name="Lufthansa ML", order=6)
+dash.register_page(__name__, icon="fa-plane", name="Lufthansa ML", order=5)
 
 CARD_STYLE = {
     "background": "rgba(255, 255, 255, 0.03)",

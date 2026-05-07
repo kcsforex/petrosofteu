@@ -48,12 +48,10 @@ def update_dashboard(n_intervals, n_charts):
 
     with sql_engine.connect() as conn:
         df = pd.read_sql("SELECT * FROM kraken_xstocks ORDER BY timestamp DESC", conn)
-        #SELECT * FROM kraken_xstocks WHERE timestamp > NOW() - INTERVAL '6 hours'
 
     if df.empty:
         return html.Div("No data found", className="text-light fst-italic")
 
-    #df["timestamp"] = pd.to_datetime(df["timestamp"]).dt.tz_convert("Europe/Budapest")
     df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True).dt.tz_convert("Europe/Budapest")
 
     

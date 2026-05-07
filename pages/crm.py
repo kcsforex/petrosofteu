@@ -10,7 +10,7 @@ from sqlalchemy import create_engine
 DB_CONFIG = "postgresql+psycopg://sql_admin:sql_pass@postgresql:5432/n8n"
 sql_engine = create_engine(DB_CONFIG, pool_size=0, max_overflow=0, pool_pre_ping=True)
 
-dash.register_page(__name__, icon="fa-coins", name="CRM Log Tracker", order=3)
+dash.register_page(__name__, icon="fa-coins", name="CRM Log Tracker", order=2)
 
 # ---- Glass Card ----
 CARD_STYLE = {

@@ -7,6 +7,7 @@ from dash import dcc, html, dash_table, callback
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 import plotly.express as px
+from sqlalchemy import create_engine, text
 
 DB_CONFIG = "postgresql+psycopg://sql_admin:sql_pass@postgresql:5432/n8n"
 sql_engine = create_engine(DB_CONFIG, pool_size=5, max_overflow=10, pool_pre_ping=True, pool_recycle=1800,      

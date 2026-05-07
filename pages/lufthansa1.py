@@ -7,7 +7,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from apis.lufthansa_api import sql_engine 
 
-dash.register_page(__name__, icon="fa-plane", name="Lufthansa Tracker", order=5)
+dash.register_page(__name__, icon="fa-plane", name="Lufthansa Tracker", order=4)
 
 # ---- Glass Card ----
 CARD_STYLE = {
